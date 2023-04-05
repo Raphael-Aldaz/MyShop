@@ -8,7 +8,8 @@ export const data = [
     {id: 7, name: "Surface 7", brand: "Windows", price: 1100, Quantity : 0, category : "Tablet"},
     {id: 8, name: "MatePade 10", brand: "Huwawei", price: 900, Quantity : 0, category : "Tablet"},
     {id: 9, name: "alienware xps 7", brand: "dell", price: 2000, Quantity : 0, category : "Laptop"},
-    {id: 10, name: "ZBook 15 ", brand: "Hp", price: 700, Quantity : 0, category : "Laptop"}
+    {id: 10, name: "ZBook 15 ", brand: "Hp", price: 700, Quantity : 0, category : "Laptop"},
+
 ]
 
 

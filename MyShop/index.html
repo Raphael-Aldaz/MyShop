@@ -44,10 +44,52 @@
                     
                 </tbody>
             </table>
-            <div class="basket__item">
-
-            </div>
         </div>
+        <section class="basket">
+            <div class="basket__item">
+                
+            </div>
+                <button class="validateBasket">Valider votre commande</button>
+        </section>
+        <section class="private__data hiddenForm">
+
+        <form class="private__data__form">
+            <div class="form__name">
+                <label for="name">Nom : </label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="form__adresse">
+                <label for="adress">Adresse : </label>
+                <input type="text" name="adress" id="adress" required>
+            </div>
+            <div class="form__email">
+                <label for="email">Email : </label>
+                <input type="email" name="email" id="email" required>
+            </div>
+            <div class="form__phone">
+                <label for="phone">Tel : </label>
+                <input type="tel" name="phone" id="phone" required>
+            </div>
+            <div class="form__example">
+                <input type="submit" class="paye__button" value="Paye !">
+            </div>
+            </form>
+
+        </section>
+
+        <section>
+            <div class="card">
+                <h1>Merci de votre Commande</h1>
+                <h3>Commande numero : <p class="order__number"></p></h3>
+                <h1>Récapitulatif de votre commande :</h1>
+                <div class="card__data">
+
+                </div>
+                <div class="card__basket">
+
+                </div>
+            </div>
+        </section>
     </section>
 </body>
 <script src="script/script.js" type="module">

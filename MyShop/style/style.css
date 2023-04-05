@@ -63,3 +63,24 @@ td{
     padding: 10px;
     text-align: center;
 }
+.validateBasket{
+    display: none;
+}
+.validateBasket{
+    display: none;
+}
+.validateBasketShow{
+    display: block !important;
+}
+.hiddenForm{
+    display: none;
+}
+.showForm{
+    display: block;
+}
+.card{
+    display: none;
+}
+.cardShow{
+    display: block;
+}
