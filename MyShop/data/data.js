@@ -12,4 +12,10 @@ export const data = [
 
 ]
 
+export const user = [
+    {id: 1, email: "raphael@raphael.com", password: "fms2023"},
+    {id: 2, email: "raphael@raphal.com", password: "fms202"},
+
+]
+
 

@@ -1,4 +1,7 @@
 import { data } from "../data/data.js";
+import { displayConnection } from "../script/connexion.js";
+
+
 const elementTab = document.querySelector('.article__item')
 const catButton = document.querySelectorAll('.list__cat__item')
 const basketSection = document.querySelector('.basket__item');
@@ -7,7 +10,9 @@ const paye = document.querySelector('.private__data__form')
 const cardData = document.querySelector('.card__data')
 const cardBasket = document.querySelector('.card__basket');
 const card = document.querySelector('.card')
-let a ;
+const conForm = document.querySelector('.connexion__form')
+
+
 let basket = [];
 
 const displayData = (arr) => {
@@ -88,6 +93,7 @@ const handleChange = (event) => {
     let uniqueBasket = [];
     let uniqueObject = {};
     const id = event.target.parentNode.parentNode.getAttribute('id');
+    
     const value = parseInt(event.target.value);
     data.map((item) => {  
     if (item.id == id) {  
@@ -103,13 +109,13 @@ const handleChange = (event) => {
     for ( let i in uniqueObject) {
         uniqueBasket.push(uniqueObject[i]);
     }
+
     displayBasket(uniqueBasket, basketSection)
     displayBasket(uniqueBasket,cardBasket)
 }
 const addition = (arr) => {
     let amount = 0;
     for(let i =0 ; i <arr.length; i++){
-        console.log((arr[i].price) * (arr[i].Quantity))
         amount += ((arr[i].price) * (arr[i].Quantity))
         }
         return amount
@@ -117,14 +123,17 @@ const addition = (arr) => {
 const sendData = (e) => {
     e.preventDefault();
     const formData = new FormData(paye);
+    
     const dataSend = [];
-for (const i of formData) {
+
+    for (const i of formData) {
     dataSend.push(i)
+    console.log(dataSend, "poile")
     }
     setTimeout(() => {
         displayCard(dataSend,cardData )
     }, 2000)
-   
+
     return dataSend
 }
 
@@ -145,14 +154,29 @@ const displayCard = (dataCustommer,node) => {
     
     
 }
+
+const checkUserStorage = () => {
+    let a ;
+    if(!localStorage.getItem('user')){
+        conForm.addEventListener('submit',displayConnection)
+        conForm.classList.replace('connexion__form--hidden', 'connexion__form--show')
+        
+    } else {
+        a = localStorage.getItem('user')
+        const form = document.querySelector('.private__data')
+        form.classList.replace('hiddenForm', 'showForm')
+    }
+    return a;
+}
 for(const sortButton of catButton){
     sortButton.addEventListener('click', getId)
 }
 validate.addEventListener('click', ()=>{
+    checkUserStorage();
     const form = document.querySelector('.private__data')
     form.classList.replace('hiddenForm', 'showForm')
 })
 paye.addEventListener('submit', sendData)
 
-
 displayData(data);
+

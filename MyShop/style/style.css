@@ -84,3 +84,9 @@ td{
 .cardShow{
     display: block;
 }
+.connexion__form--hidden{
+    display: none;
+}
+.connexion__form--show{
+    display: block;
+}
