@@ -178,5 +178,11 @@ validate.addEventListener('click', ()=>{
 })
 paye.addEventListener('submit', sendData)
 
+document.addEventListener('DOMContentLoaded', function() {
+    const elems = document.querySelectorAll('.dropdown-trigger');
+    const instances = M.Dropdown.init(elems, {
+        constrainWidth:false,
+    });
+});
 displayData(data);
 

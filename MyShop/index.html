@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyShop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
@@ -20,14 +21,21 @@
             </div>
         </nav>
     </header>
-    <section class="main__section">
-        <div class="sort">
-            <div id="All" class="list__cat__item" >All</div>
-            <div id="SmartPhone" class="list__cat__item">SmartPhone</div>
-            <div id="Tablet" class="list__cat__item">Tablet</div>
-            <div id="Laptop" class="list__cat__item">Pc</div>
+    <section class="main__section container row">
+
+
+        <div class="sort col s2 ">
+            <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Afficher articles</a>
+            <ul id='dropdown1' class='dropdown-content'>
+                <li id="All" class="list__cat__item">All</li>
+                <li  id="SmartPhone" class="list__cat__item">SmartPhone</li>
+                <li id="Tablet" class="list__cat__item">Tablet</li>
+                <li id="Laptop" class="list__cat__item">Pc</li>
+            </ul>            
         </div>
-        <div class="list__articles">
+
+
+        <div class="list__articles col s8">
             <h1 class="list__articles__title">Liste des articles en stock</h1>
             <table>
                 <thead>
@@ -45,7 +53,7 @@
                 </tbody>
             </table>
         </div>
-        <section class="basket">
+        <section class="basket cols2">
             <div class="basket__item">
                 
             </div>
@@ -104,6 +112,7 @@
         <button type="submit" class="connexion__validate">Connexion</button>
     </form>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="script/script.js" type="module">
 </script>
 

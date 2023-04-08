@@ -3,7 +3,7 @@ body{
     letter-spacing: 0.3rem;
     list-style: none;
     width: 100%;
-    height: 100vh;
+    
 }
 nav{
     display: flex;
@@ -11,7 +11,28 @@ nav{
     color: grey;
     align-items: center;
 }
-.main__section{
+.sort{
+    margin-top: 50px;
+    width: 100%;
+}
+.list__cat__item{
+    padding: 20px;
+}
+.btn{
+    background-color: #254441;
+}
+.btn:hover{
+    background-color: #AFD0BF;
+    color: #254441;
+}
+.dropdown-content li:hover{
+    background-color: #254441;
+    color: white;
+}
+/* Primary #254441
+secondary #e2efde
+third #AFD0BF */
+/* .main__section{
     display: flex;
     width: 80%;
     padding-top: 5%;
@@ -62,7 +83,7 @@ td{
 .quantity__articles {
     padding: 10px;
     text-align: center;
-}
+} */
 .validateBasket{
     display: none;
 }
