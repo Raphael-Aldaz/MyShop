@@ -67,7 +67,7 @@ const displayBasket = (arr, node) =>{
     }
     const priceBasket =addition(arr)
     const totalBasket = document.createElement("div");
-    const totalBasketText = document.createTextNode("Prix total de la commande : " + priceBasket )
+    const totalBasketText = document.createTextNode("Prix total de la commande : " + priceBasket +" €")
     totalBasket.appendChild(totalBasketText)
     node.appendChild(totalBasket)
 
