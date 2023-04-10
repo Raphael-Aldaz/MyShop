@@ -131,9 +131,14 @@ const sendData = () => {
     for (const i of formData) {
     dataSend.push(i)
     }
+    const spinner = document.querySelector('.lds-roller')
+    spinner.style.display = "inline-block";
+    setTimeout(function() {
+        spinner.style.display = "none";
+    }, 4000);
     setTimeout(() => {
         displayCard(dataSend,cardData )
-    }, 2000)
+    }, 4000)
 
     return dataSend
 }
