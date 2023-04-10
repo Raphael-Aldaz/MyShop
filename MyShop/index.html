@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyShop</title>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
     <header>
-        <nav>
-            <h1>Ma Boutique en ligne</h1>
+        <div class="navBar">
+            <h1>My Shop</h1>
             <div class="navigation">
                 <div class="navigation__item">
                     <a href="#">
@@ -19,7 +21,18 @@
                     </a>
                 </div>
             </div>
-        </nav>
+        </div>
+        <div class="connexion__section">
+            <button class="btn__connexion logIn  modal-trigger"data-target="modal1" >
+                <i class="small material-icons">account_circle</i>
+                Se connecter
+            </button>
+            <button class="btn__connexion logOut logOut__show">
+                <i class="small material-icons">account_circle</i>
+                Se Deconnecter
+            </button>
+        </div>
+
     </header>
     <section class="main__section container row">
 
@@ -59,9 +72,11 @@
             </div>
                 <button class="validateBasket">Valider votre commande</button>
         </section>
-        <section class="private__data hiddenForm">
 
-        <form class="private__data__form">
+    </section>
+    <section class="private__data hiddenForm container row">
+
+        <form class="private__data__form col s3">
             <div class="form__name">
                 <label for="name">Nom : </label>
                 <input type="text" name="name" id="name" required>
@@ -85,7 +100,7 @@
 
         </section>
 
-        <section>
+        <div class="container">
             <div class="card">
                 <h1>Merci de votre Commande</h1>
                 <h3>Commande numero : <p class="order__number"></p></h3>
@@ -97,20 +112,31 @@
 
                 </div>
             </div>
-        </section>
-    </section>
+        </div>
 
-    <form class="connexion__form connexion__form--hidden">
-        <div class="connexion__mail">
-            <label for="connexion__email">Email : </label>
-            <input type="email" name="connexion__email" id="connexion__email" required>
-        </div>
-        <div class="connexion__password">
-            <label for="connexion__psw">Password : </label>
-            <input type="password" name="connexion__psw" id="connexion__psw" required>
-        </div>
-        <button type="submit" class="connexion__validate">Connexion</button>
-    </form>
+    
+
+
+    <!-- Modal Trigger -->
+    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+    <div class="modal-content">
+        <form class="connexion__form ">
+            <div class="connexion__mail">
+                <label for="connexion__email">Email : </label>
+                <input type="email" name="connexion__email" id="connexion__email" required>
+            </div>
+            <div class="connexion__password">
+                <label for="connexion__psw">Password : </label>
+                <input type="password" name="connexion__psw" id="connexion__psw" required>
+            </div>
+            <button type="submit" class="connexion__validate">Connexion</button>
+        </form>
+    </div>
+    </div>
+
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="script/script.js" type="module">

@@ -1,9 +1,10 @@
 import { user } from "../data/data.js";
+import { checkUserStorage } from "./script.js";
 const conForm = document.querySelector('.connexion__form')
 let userConnexion = [];
 
 const checkUser = () => {
-    
+    console.log("b")
     const formDataConnexion = new FormData(conForm);
     
     const email = formDataConnexion.get('connexion__email')
@@ -21,8 +22,8 @@ const checkUser = () => {
 }
 
 
-export const displayConnection = (e) => {
-    e.preventDefault();
+export const displayConnection = () => {
     const userChecked =  checkUser();
-    localStorage.setItem('user', userChecked[0].email) 
+    localStorage.setItem('user', userChecked[0].email)
+    checkUserStorage(); 
 }

@@ -11,7 +11,9 @@ const cardData = document.querySelector('.card__data')
 const cardBasket = document.querySelector('.card__basket');
 const card = document.querySelector('.card')
 const conForm = document.querySelector('.connexion__form')
-
+const conSubmit = document.querySelector('.connexion__validate')
+const login = document.querySelector('.logIn')
+const logOut = document.querySelector('.logOut')
 
 let basket = [];
 
@@ -120,15 +122,14 @@ const addition = (arr) => {
         }
         return amount
 }
-const sendData = (e) => {
-    e.preventDefault();
+const sendData = () => {
+    
     const formData = new FormData(paye);
     
     const dataSend = [];
 
     for (const i of formData) {
     dataSend.push(i)
-    console.log(dataSend, "poile")
     }
     setTimeout(() => {
         displayCard(dataSend,cardData )
@@ -155,34 +156,63 @@ const displayCard = (dataCustommer,node) => {
     
 }
 
-const checkUserStorage = () => {
+export const checkUserStorage = () => {
     let a ;
+    const logOut = document.querySelector('.logOut')
     if(!localStorage.getItem('user')){
         conForm.addEventListener('submit',displayConnection)
         conForm.classList.replace('connexion__form--hidden', 'connexion__form--show')
-        
     } else {
         a = localStorage.getItem('user')
         const form = document.querySelector('.private__data')
         form.classList.replace('hiddenForm', 'showForm')
+        logOut.classList.replace('logOut__show', 'logOutShow')
+        login.classList.replace('logIn', 'logIn__hidden')
     }
+    console.log(a)
     return a;
 }
+
 for(const sortButton of catButton){
     sortButton.addEventListener('click', getId)
 }
 validate.addEventListener('click', ()=>{
     checkUserStorage();
-    const form = document.querySelector('.private__data')
-    form.classList.replace('hiddenForm', 'showForm')
+    
 })
-paye.addEventListener('submit', sendData)
+logOut.addEventListener('click', ()=>{
+    localStorage.removeItem('user')
+    checkUserStorage
+})
+
+
+
+paye.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    sendData();
+    const main = document.querySelector('.main__section')
+    main.setAttribute("style", "display:none;");
+    const dataForm = document.querySelector('.private__data')
+    dataForm.setAttribute("style", "display:none;")
+
+})
+
+conForm.addEventListener('submit', (e)=> {
+    e.preventDefault();
+    displayConnection();
+})
 
 document.addEventListener('DOMContentLoaded', function() {
     const elems = document.querySelectorAll('.dropdown-trigger');
     const instances = M.Dropdown.init(elems, {
         constrainWidth:false,
+        
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+});
 displayData(data);
+checkUserStorage();
 

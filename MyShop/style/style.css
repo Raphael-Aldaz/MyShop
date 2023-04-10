@@ -5,12 +5,78 @@ body{
     width: 100%;
     
 }
-nav{
+.main__section{
+    display: flex;
+}
+header{
     display: flex;
     background-color: black;
     color: grey;
     align-items: center;
+    justify-content: space-between;
 }
+.navBar{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: space-evenly;
+}
+.navigation{
+    align-self: center;
+}
+.navBar > h1 {
+    font-size: 35px;
+}
+.connexion__section{
+    display: flex;
+    align-items: center;
+    margin-right: 20%;
+    width: 10%;
+    justify-content: space-around;
+    padding: 10px;
+    font-size: 20px;
+}
+.btn__connexion{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    font-size: 20px;
+}
+.btn__connexion:hover{
+    cursor: pointer;
+}
+
+.logOut{
+    display: none;
+}
+.logOutShow{
+    display: block;
+}
+
+.navigation__item{
+    height: 70px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-weight: bold;
+    font-size: 20px;
+}
+.navigation__item:hover{
+    background-color: #e2efde;
+    color: #254441;
+    transition: 1s;
+}
+a{
+    color: #e2efde ;
+}
+a:hover{
+    color: #254441 ;
+}
+
+
 .sort{
     margin-top: 50px;
     width: 100%;
@@ -20,6 +86,8 @@ nav{
 }
 .btn{
     background-color: #254441;
+    width: auto;
+    height: auto;
 }
 .btn:hover{
     background-color: #AFD0BF;
@@ -28,6 +96,13 @@ nav{
 .dropdown-content li:hover{
     background-color: #254441;
     color: white;
+}
+
+.private__data__form{
+    border: solid #254441 1px;
+    padding: 20px;
+    margin-bottom: 50px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 /* Primary #254441
 secondary #e2efde
@@ -110,4 +185,10 @@ td{
 }
 .connexion__form--show{
     display: block;
+}
+.logIn{
+    display: block;
+}
+.logIn__hidden{
+    display: none;
 }
